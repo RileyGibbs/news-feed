@@ -11,6 +11,7 @@ const USER_QUERY = gql`
       bio
       fellowship
       avatar_url
+      created_ts
       projects {
         id
         name
@@ -29,12 +30,14 @@ type QueryVars = {
 }
 
 type User = {
+  type: "user";
   id: number;
   name: string;
   bio: string;
-  fellowship: "fellows" | "angels" | "writers";
+  fellowship: "founders" | "angels" | "writers";
   avatar_url: string;
   projects: Project[];
+  created_ts: Date;
 }
 
 type Project = {

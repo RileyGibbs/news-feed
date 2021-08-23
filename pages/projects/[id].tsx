@@ -28,6 +28,7 @@ type QueryVars = {
 }
 
 type Project = {
+  type: "project";
   id: number;
   name: string;
   description: string;

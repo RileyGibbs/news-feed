@@ -1,20 +1,35 @@
+import styled from 'styled-components'
+import {useRouter} from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from 'components/Layout'
+
 
 export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>On Deck Newsfeed</title>
+        <title>On Deck News Feed</title>
       </Head>
-      <h1>Hello there!</h1>
-      <p>Your future newsfeed goes to this page. Or not, you decide 🤷</p>
-      <span>Check out these pages:</span>
-      <ul>
-        <li>Project <Link href="/projects/10">Blue Onion Labs</Link></li>
-        <li>User <Link href="/users/11">Cai Burris</Link></li>
-      </ul>
+      <h1>Welcome to the On Deck News Feed</h1>
+      <span>Which fellowship are you in? 🤔</span>
+      <br/>
+      <FellowshipLinkRow>
+        <Link href="/angels">Angels</Link>
+        <p> | </p>
+        <Link href="/founders">Founders</Link>
+        <p> | </p>
+        <Link href="/writers">Writers</Link>
+      </FellowshipLinkRow>
     </Layout>
   )
 }
+
+const FellowshipLinkRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  min-width: 21rem;
+  justify-content: space-between;
+  padding-left: 10rem;
+  padding-right: 10rem;
+`
